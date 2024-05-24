@@ -11,7 +11,8 @@ from PIL import ImageTk, Image
 # tk calendar
 from tkcalendar import Calendar, DateEntry
 from datetime import date
-
+from banco import RegistrationSystem
+from util import Validacao
 # chamdo a view
 from banco import *
 
@@ -51,7 +52,7 @@ frame_tabela.grid(row=3, column=0, pady=0, padx=10, sticky=NSEW, columnspan=5)
 # frame Logo
 global imagem, imagem_string, l_imagem
 
-app_lg = Image.open('assets/logo.png')
+app_lg = Image.open('C:/Users/Lury/Desktop/EDLANE_UTILS/bancodedados/assets/logo.png')
 app_lg = app_lg.resize((65,65))
 app_lg = ImageTk.PhotoImage(app_lg)
 app_logo = Label(frame_logo, image=app_lg, text="APAM - Associação Mato-Grossense Protetora dos Animais", width=1200, compound=LEFT, anchor=NW, font=('Verdana 15'), bg=co6, fg=co1, padx=20)
@@ -59,7 +60,7 @@ app_logo.place(x=5, y=0)
 
 
 # abrindo a imagem
-imagem  = Image.open('assets/logo.png')
+imagem  = Image.open('C:/Users/Lury/Desktop/EDLANE_UTILS/bancodedados/assets/logo.png')
 imagem = imagem.resize((130, 130))
 imagem = ImageTk.PhotoImage(imagem)
 
@@ -68,59 +69,89 @@ l_imagem.place(x=755, y=10)
 
 # ------------- funcoes para CRUD ---------------
 
-# funcao criar
 def adicionar():
-	global imagem, imagem_string, l_imagem
+    global imagem_string
 
-	# obtendo os valores
-	nome = e_nome.get()
-	cpf = c_cpf.get()
-	data = data_nascimento.get()
-	email = e_email.get()
-	endereco = e_endereco.get()
-	matricula = e_matricula.get()
-	tel = e_tel.get()
-	sexo = c_sexo.get()
-	temperamento = t_temperamento.get()
-	img = imagem_string
+    nome = e_nome.get()
+    cpf = c_cpf.get()
+    data = data_nascimento.get()
+    email = e_email.get()
+    endereco = e_endereco.get()
+    matricula = e_matricula.get()
+    tel = e_tel.get()
+    sexo = c_sexo.get()
+    temperamento = t_temperamento.get()
+    img = imagem_string
 
-	lista = [nome, cpf, data, email, endereco, matricula, tel, sexo, temperamento, img]
+   
+    estado_civil = "Solteiro(a)"  
+    naturalidade = "Brasil" 
+    endereco_empresa = "Endereço da Empresa"  
+    valor_colaborar = 0.0 
+    nome_empresa = "Nome da Empresa" 
+    profissao = "Profissão" 
+    em_que_pode_ajuar_apam = "Formas de ajudar APAM" 
+    outras_formas_de_ajudar_apam = "Outras formas de ajudar APAM"  
+    expectativa_trabalho_voluntario = "Expectativas do trabalho voluntário" 
 
-	# Verificando caso algum campo esteja vazio ou nao
-	for i in lista:
-		if i == '':  # Verificar se ocorre erro com ' ' ou derivados
-			messagebox.showerror('Erro', 'Preencha todos os campos')
-			return
+    
+    lista = [nome, cpf, data, email, endereco, matricula, tel, sexo, temperamento, img]
+    for i in lista:
+        if not Validacao.verificarCampo(i):
+            messagebox.showerror('Erro', 'Preencha todos os campos')
+            return
 
-	# registro do apam
-	registration_system.register_apam(lista)
+    
+    if not Validacao.validarNome(nome):
+        messagebox.showerror('Erro', 'Nome inválido')
+        return
+    if not Validacao.validarCPF(cpf):
+        messagebox.showerror('Erro', 'CPF inválido')
+        return
+    if not Validacao.validarEmail(email):
+        messagebox.showerror('Erro', 'Email inválido')
+        return
+    if not Validacao.validarCEP(endereco):
+        messagebox.showerror('Erro', 'CEP inválido')
+        return
+    if not Validacao.validarTelefone_e_Celular(tel):
+        messagebox.showerror('Erro', 'Telefone/Celular inválido')
+        return
+    if not Validacao.validarSexo(sexo):
+        messagebox.showerror('Erro', 'Sexo inválido')
+        return
 
-	# limpar os campos de entradas
-	e_nome.delete(0,END)
-	c_cpf.delete(0,END)
-	data_nascimento.delete(0,END)
-	e_email.delete(0,END)
-	e_endereco.delete(0,END)
-	e_matricula.delete(0,END)
-	e_tel.delete(0,END)
-	c_sexo.delete(0,END)
-	t_temperamento.delete(0,END)
+   
+    apam = (nome, cpf, data, email, endereco, matricula, tel, sexo, temperamento, img,
+            estado_civil, naturalidade, endereco_empresa, valor_colaborar, nome_empresa,
+            profissao, em_que_pode_ajuar_apam, outras_formas_de_ajudar_apam, expectativa_trabalho_voluntario)
+    registration_system.register_apam(apam)
 
-	# mostrando os valores na Tabela
-	mostrar_tabela()
+    
+    e_nome.delete(0, END)
+    c_cpf.delete(0, END)
+    data_nascimento.delete(0, END)
+    e_email.delete(0, END)
+    e_endereco.delete(0, END)
+    e_matricula.delete(0, END)
+    e_tel.delete(0, END)
+    c_sexo.delete(0, END)
+    t_temperamento.delete(0, END)
+
+  
+    mostrar_tabela()
 
 
-# funcao procurar
 def procurar():
 	global imagem, imagem_string, l_imagem
 
-	# obtendo o id
+	
 	id_apam = int(e_procurar.get())
 
-	# procura o ID do apam
+
 	dados = registration_system.search_apam(id_apam)
 
-	# limpando os campos de entradas
+	
 	e_nome.delete(0,END)
 	c_cpf.delete(0,END)
 	data_nascimento.delete(0,END)
@@ -131,7 +162,7 @@ def procurar():
 	c_sexo.delete(0,END)
 	t_temperamento.delete(0,END)
 
-	# insere os valores
+	
 	e_nome.insert(END,dados[1])
 	c_cpf.insert(END,dados[2])
 	data_nascimento(END,dados[3])
@@ -141,12 +172,12 @@ def procurar():
 	e_tel.insert(END,dados[7])
 	c_sexo.insert(END,dados[8])
 	t_temperamento.insert(END,dados[9])
-	# img = imagem_string
+	
 
 	imagem = dados[10]
 	imagem_string = imagem
 
-	# abre a imagem
+
 	imagem  = Image.open(imagem)
 	imagem = imagem.resize((130, 130))
 	imagem = ImageTk.PhotoImage(imagem)
@@ -155,7 +186,7 @@ def procurar():
 	l_imagem.place(x=755, y=10)
 
 
-# funcao atualizar
+
 def atualizar():
 	global imagem, imagem_string, l_imagem
 
@@ -280,14 +311,14 @@ l_tel.place(x=4, y=130)
 e_tel = Entry(frame_detalhes, width=15, justify='left', relief='solid')
 e_tel.place(x=7, y=160)
 
-# selecao de sexo
+
 l_sexo = Label(frame_detalhes, text="Sexo *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_sexo.place(x=262, y=130)
 c_sexo = ttk.Combobox(frame_detalhes, width=7, font=('Ivy 8 bold'), justify='center')
 c_sexo['values'] = ('M','F')
 c_sexo.place(x=262, y=160)
 
-# Pegando os temperamentos dos animais
+
 temperamentos_animais = ['Agressivo', 'Tímido', 'Passivo-agressivo', 'Sociável', 'Independente']
 temperamento = []
 
@@ -389,19 +420,19 @@ botao_procurar.grid(row=1, column=1, pady=10, padx=0, sticky=NSEW)
 
 # Botoes
 
-app_img_adicionar = Image.open('assets/add.png')
+app_img_adicionar = Image.open('C:/Users/Lury/Desktop/EDLANE_UTILS/bancodedados/assets/add.png')
 app_img_adicionar = app_img_adicionar.resize((25,25))
 app_img_adicionar = ImageTk.PhotoImage(app_img_adicionar)
 app_adicionar = Button(frame_botoes, command=adicionar, image=app_img_adicionar, text=" Adicionar", width=100, compound=LEFT, relief=GROOVE, overrelief=RIDGE, font=('Ivy 11'), bg=co1, fg=co0)
 app_adicionar.grid(row=1, column=0, pady=5, padx=10, sticky=NSEW)
 
-app_img_atualizar = Image.open('assets/update.png')
+app_img_atualizar = Image.open('C:/Users/Lury/Desktop/EDLANE_UTILS/bancodedados/assets/update.png')
 app_img_atualizar = app_img_atualizar.resize((25,25))
 app_img_atualizar = ImageTk.PhotoImage(app_img_atualizar)
 app_atualizar = Button(frame_botoes,command=atualizar, image=app_img_atualizar, text=" Atualizar", width=100, compound=LEFT, relief=GROOVE, overrelief=RIDGE, font=('Ivy 11'), bg=co1, fg=co0)
 app_atualizar.grid(row=2, column=0, pady=5, padx=10, sticky=NSEW)
 
-app_img_deletar = Image.open('assets/delete.png')
+app_img_deletar = Image.open('C:/Users/Lury/Desktop/EDLANE_UTILS/bancodedados/assets/delete.png')
 app_img_deletar = app_img_deletar.resize((25,25))
 app_img_deletar = ImageTk.PhotoImage(app_img_deletar)
 app_deletar = Button(frame_botoes, command=deletar, image=app_img_deletar, text=" Deletar", width=100, compound=LEFT, relief=GROOVE, overrelief=RIDGE, font=('Ivy 11'), bg=co1, fg=co0)
