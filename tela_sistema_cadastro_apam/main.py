@@ -257,7 +257,7 @@ c_cpf.place(x=260, y=40)
 
 l_data_nascimento = Label(frame_detalhes, text="Data de nascimento *", height=1,anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_data_nascimento.place(x=515, y=10)
-data_nascimento = DateEntry(frame_detalhes, width=18, justify='center', background='darkblue', foreground='white', borderwidth=2, year=2023)
+data_nascimento = DateEntry(frame_detalhes, width=18, justify='center', background='DeepSkyBlue2', foreground='white', borderwidth=2, year=2000)
 data_nascimento.place(x=515, y=40)
 
 l_email = Label(frame_detalhes, text="Email *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
