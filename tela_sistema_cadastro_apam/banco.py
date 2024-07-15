@@ -99,11 +99,15 @@ class RegistrationSystem:
 
 
     def export_to_excel(self, table: str='bancoapam'):
-        to_excel = self.db_execute(f"SELECT * FROM {table}")
-        colunas = self.get_columns(table=table)
-        colunas.insert(0,'id')
-        to_excel = pd.DataFrame(to_excel, columns=colunas)
-        to_excel.to_excel(f'{table}.xlsx')
+        try:
+            to_excel = self.db_execute(f"SELECT * FROM {table}")
+            colunas = self.get_columns(table=table)
+            colunas.insert(0,'id')
+            to_excel = pd.DataFrame(to_excel, columns=colunas)
+            to_excel.to_excel(f'{table}.xlsx')
+            messagebox.showinfo('Sucesso', 'Exportado com sucesso!')
+        except Exception as e:
+            messagebox.showerror('Erro', f"Falha ao exportar: {e}")
 
 
 # create a registration system instance

@@ -32,11 +32,17 @@ class AutocompleteEntry(Entry):
             self.var = self["textvariable"] = StringVar()
 
         self.var.trace('w', self.changed)
-        self.bind("<Right>", self.selection)  # Colocar enter e cursor também
+        self.bind("<Right>", self.selection)
         self.bind("<Up>", self.moveUp)
         self.bind("<Down>", self.moveDown)
+        self.bind("<Return>", self.selection)
 
         self.listboxUp = False
+    
+    
+    def set_completion_list(self, completion_list):
+        self.autocompleteList = completion_list
+        
     def changed(self, name, index, mode):
         if self.var.get() == '':
             if self.listboxUp:
@@ -49,6 +55,7 @@ class AutocompleteEntry(Entry):
                     self.listbox = Listbox(width=self["width"], height=self.listboxLength)
                     self.listbox.bind("<Button-1>", self.selection)
                     self.listbox.bind("<Right>", self.selection)
+                    self.listbox.bind("<Return>", self.selection)
                     self.listbox.place(x=21, y=140 + self.winfo_height())
                     self.listboxUp = True
 

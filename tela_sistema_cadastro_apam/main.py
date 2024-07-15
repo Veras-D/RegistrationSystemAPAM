@@ -31,6 +31,7 @@ co3 = "#00a095"  # Verde
 co4 = "#403d3d"   # letra
 co6 = "#003452"   # azul
 
+autocompleteList = []
 class Example(ThemedTk):
     """
     Example that is used to create screenshots for new themes.
@@ -153,7 +154,9 @@ def validar(lista: list):
 
 
 # ------------- funcoes para CRUD ---------------
-def adicionar():    
+def adicionar():
+    global autocompleteList
+        
     data_registro = d_data_registro.get()
     email = e_email.get()
     name = n_nome.get()
@@ -178,21 +181,23 @@ def adicionar():
     expectativa_trabalho_volutario = e_expectativa_trabalho_volutario.get("1.0", END)
     
     lista = [data_registro, email, name, cpf, rg, data_nascimento, sexo, naturalidade, estado_civil, endereco, telefone_fixo, telefone_celular, nome_empresa, endereco_empresa, telefone_empresa, profissao, valor_colaborar, em_que_pode_ajudar_apam, outras_formas_de_ajudar_apam, expectativa_trabalho_volutario]
-    autocompleteList = [f'{nome[0]} ({nome[1]})' for nome in registration_system.get_name()]  # Tornar global
     
 
 # ------------- Validações ---------------
     if not validar(lista):
         registration_system.register_apam(lista)
-
-        # Limpando campos de entrada    
+        # Atualiza autocompleteList com novos nomes
+        autocompleteList = [f'{nome[0]} ({nome[1]})' for nome in registration_system.get_name()]  # Adicione esta linha
+        # Limpando campos de entrada 
+        e_procurar.set_completion_list(autocompleteList)
+           
         limpar_campos(lista_campos)
 
     mostrar_tabela()
 
 
 # funcao procurar
-def procurar():
+def procurar():    
 	# obtendo o id
     id = re.search(r'\((\d+)\)', e_procurar.get())
     id_apam = int(id.group(1))
@@ -210,9 +215,9 @@ def procurar():
     c_cpf.insert(END,dados[0][4])
     r_rg.insert(END,dados[0][5])
     d_data_nascimento.insert(END,dados[0][6])
-    s_sexo.insert(END,dados[0][7])
+    s_sexo.set(dados[0][7])
     n_naturalidade.insert(END,dados[0][8])
-    e_estado_civil.insert(END,dados[0][9])
+    e_estado_civil.set(dados[0][9])
     e_endereco.insert(END,dados[0][10])
     t_telefone_fixo.insert(END,dados[0][11])
     t_telefone_celular.insert(END,dados[0][12])
@@ -228,6 +233,7 @@ def procurar():
 
 
 def atualizar():
+    global autocompleteList
     # obtendo o id
     if not e_procurar.get():
         messagebox.showerror("Erro", "Insira o ID do Voluntario")
@@ -274,6 +280,8 @@ def atualizar():
 
 # funcao deletar
 def deletar():
+    global autocompleteList
+    
 	# obtendo o id
     id = re.search(r'\((\d+)\)', e_procurar.get())
     id_apam = int(id.group(1))
@@ -316,6 +324,12 @@ d_data_nascimento = DateEntry(frame_detalhes, width=15, justify='center', backgr
 d_data_nascimento.delete(0, END)
 d_data_nascimento.place(x=393, y=84)
 
+l_estado_civil = Label(frame_detalhes, text="ESTADO CIVIL *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_estado_civil.place(x=558, y=60)
+e_estado_civil = ttk.Combobox(frame_detalhes, width=20, font=('Ivy 8 bold'), state='readonly')
+e_estado_civil['values'] = ('Solteiro(a)','Casado(a)','Separado(a)','Divorciado(a)','Viúvo(a)', 'União estável')
+e_estado_civil.place(x=558, y=85)
+
 l_sexo = Label(frame_detalhes, text="SEXO *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_sexo.place(x=745, y=60)
 s_sexo = ttk.Combobox(frame_detalhes, width=7, font=('Ivy 8 bold'), justify='center', state='readonly')
@@ -340,15 +354,15 @@ t_telefone_celular.bind("<FocusIn>", lambda event: t_telefone_celular.delete(0,"
 t_telefone_celular.bind("<FocusOut>", lambda event: t_telefone_celular.insert(0, "(XX)XXXXX-XXXX") if NameVarMovel.get() == "" else None)
 t_telefone_celular.place(x=197, y=134)
 
-l_naturalidade = Label(frame_detalhes, text="NATURALIDADE *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_naturalidade.place(x=665, y=109)
-n_naturalidade = ttk.Entry(frame_detalhes, width=18, justify='left')
-n_naturalidade.place(x=665, y=134)
-
 l_email = Label(frame_detalhes, text="EMAIL *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_email.place(x=393, y=109)
 e_email = ttk.Entry(frame_detalhes, width=30, justify='left')
 e_email.place(x=393, y=134)
+
+l_naturalidade = Label(frame_detalhes, text="NATURALIDADE *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_naturalidade.place(x=665, y=109)
+n_naturalidade = ttk.Entry(frame_detalhes, width=18, justify='left')
+n_naturalidade.place(x=665, y=134)
 
 l_endereco = Label(frame_detalhes, text="ENDEREÇO *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_endereco.place(x=4, y=159)
@@ -359,6 +373,12 @@ l_profissao = Label(frame_detalhes, text="PROFISSÃO *", height=1, anchor=NW, fo
 l_profissao.place(x=393, y=159)
 p_profissao = ttk.Entry(frame_detalhes, width=30, justify='left')
 p_profissao.place(x=393, y=184)
+
+l_data_registro = Label(frame_detalhes, text="DATA REGISTRO *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_data_registro.place(x=665, y=159)
+d_data_registro = DateEntry(frame_detalhes, width=16, justify='center', background='darkblue', foreground='white', borderwidth=2, year=2024)
+d_data_registro.delete(0, END)
+d_data_registro.place(x=665, y=184)
 
 l_nome_empresa = Label(frame_detalhes, text="NOME DA EMPRESA *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_nome_empresa.place(x=4, y=209)
@@ -379,21 +399,10 @@ t_telefone_empresa.bind("<FocusIn>", lambda event: t_telefone_empresa.delete(0,"
 t_telefone_empresa.bind("<FocusOut>", lambda event: t_telefone_empresa.insert(0, "(XX)XXXXX-XXXX") if NameVarEmpresa.get() == "" else None)
 t_telefone_empresa.place(x=665, y=234)
 
-l_data_registro = Label(frame_detalhes, text="DATA REGISTRO *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_data_registro.place(x=665, y=159)
-d_data_registro = DateEntry(frame_detalhes, width=16, justify='center', background='darkblue', foreground='white', borderwidth=2, year=2024)
-d_data_registro.delete(0, END)
-d_data_registro.place(x=665, y=184)
-
 l_em_que_pode_ajudar_apam = Label(frame_detalhes, text="EM QUE PODE AJUDAR APAM", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_em_que_pode_ajudar_apam.place(x=4, y=259)
 e_em_que_pode_ajudar_apam = scrolledtext.ScrolledText(frame_detalhes, width=48, height=3, wrap=WORD)
 e_em_que_pode_ajudar_apam.place(x=4, y=284)
-
-l_outras_formas_de_ajudar_apam = Label(frame_detalhes, text="OUTRAS FORMAS DE AJUDAR APAM", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_outras_formas_de_ajudar_apam.place(x=430, y=345)
-o_outras_formas_de_ajudar_apam = scrolledtext.ScrolledText(frame_detalhes, width=46, height=3, wrap=WORD)
-o_outras_formas_de_ajudar_apam.place(x=430, y=368)
 
 l_expectativa_trabalho_volutario = Label(frame_detalhes, text="EXPECTATIVA TRABALHO VOLUNTÁRIO", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_expectativa_trabalho_volutario.place(x=430, y=259)
@@ -405,11 +414,10 @@ l_valor_colaborar.place(x=234, y=345)
 v_valor_colaborar = ttk.Entry(frame_detalhes, width=20, justify='left')
 v_valor_colaborar.place(x=234, y=368)
 
-l_estado_civil = Label(frame_detalhes, text="ESTADO CIVIL *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_estado_civil.place(x=558, y=60)
-e_estado_civil = ttk.Combobox(frame_detalhes, width=20, font=('Ivy 8 bold'), state='readonly')
-e_estado_civil['values'] = ('Solteiro(a)','Casado(a)','Separado(a)','Divorciado(a)','Viúvo(a)', 'União estável')
-e_estado_civil.place(x=558, y=85)
+l_outras_formas_de_ajudar_apam = Label(frame_detalhes, text="OUTRAS FORMAS DE AJUDAR APAM", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_outras_formas_de_ajudar_apam.place(x=430, y=345)
+o_outras_formas_de_ajudar_apam = scrolledtext.ScrolledText(frame_detalhes, width=46, height=3, wrap=WORD)
+o_outras_formas_de_ajudar_apam.place(x=430, y=368)
 
 lista_campos = [d_data_registro, e_email, n_nome, c_cpf, r_rg, d_data_nascimento, s_sexo, n_naturalidade, e_estado_civil, e_endereco, t_telefone_fixo, t_telefone_celular, n_nome_empresa, e_endereco_empresa,     t_telefone_empresa, p_profissao, v_valor_colaborar, o_outras_formas_de_ajudar_apam, e_expectativa_trabalho_volutario, e_em_que_pode_ajudar_apam]
 
@@ -435,6 +443,8 @@ def limpar_campos(lista: list = lista_campos):
     lista[17].delete("1.0", END)
     lista[18].delete("1.0", END)
     lista[19].delete("1.0", END)
+    s_sexo.set('')
+    e_estado_civil.set('') 
 
 
 # Tabela do banco apam
