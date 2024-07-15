@@ -39,7 +39,7 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
 
 <h2 style="color: #D2691E;">Como Usar</h2>
 <ol style="color: #D2691E;">
-    <li>Vá na Pasta exe e baixe o projeto.</li>
+    <li>Baixe o projeto pelo <a href="https://drive.google.com/drive/folders/1j-0z0R6_HqXRs9ddUQeZsDVP7neyl2n0">link</a>.</li>
     <li>Use a interface para cadastrar, visualizar e gerenciar doadores.</li>
 </ol>
 <h3 style="color: #0077B5;">Imagem</h3>
