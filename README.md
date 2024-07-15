@@ -16,10 +16,8 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
 <h2 style="color: #FF6347;">Tecnologias Utilizadas</h2>
 <ul>
     <li style="color: #FF6347;">Python</li>
-    <li style="color: #FF6347;">Flask</li>
-    <li style="color: #FF6347;">HTML/CSS</li>
-    <li style="color: #FF6347;">JavaScript</li>
-    <li style="color: #FF6347;">MySQL</li>
+    <li style="color: #FF6347;">Pandas</li>
+    <li style="color: #FF6347;">SQLite</li>
 </ul>
 
 <h2 style="color: #6A5ACD;">Instalação</h2>
@@ -41,9 +39,11 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
 
 <h2 style="color: #D2691E;">Como Usar</h2>
 <ol style="color: #D2691E;">
-    <li>Abra seu navegador e vá para <code>http://localhost:5000</code>.</li>
+    <li>Vá na Pasta exe e baixe o projeto.</li>
     <li>Use a interface para cadastrar, visualizar e gerenciar doadores.</li>
 </ol>
+<h3 style="color: #0077B5;">Imagem</h3>
+![image](https://github.com/user-attachments/assets/07a4e9b3-ff32-4a2a-9465-c1b856ab84be)
 
 <h2 style="color: #0077B5;">Profissionais Envolvidos</h2>
 <p>
@@ -68,6 +68,12 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
      <a href="https://www.linkedin.com/in/dayvisson-tenorio" style="color: #0077B5; text-decoration: none;">
         <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
         Analista de Sistemas e Desenvolvedor Java - Dayvisson Tenorio
+    </a>
+</p>
+<p>
+     <a href="https://www.linkedin.com/in/veras-d" style="color: #0077B5; text-decoration: none;">
+        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
+        Desenvolvedor Python - Veras
     </a>
 </p>
 <h2 style="color: #8B0000;">Contribuição</h2>
