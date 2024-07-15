@@ -43,7 +43,9 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
     <li>Use a interface para cadastrar, visualizar e gerenciar doadores.</li>
 </ol>
 <h3 style="color: #0077B5;">Imagem</h3>
-![image](https://github.com/user-attachments/assets/07a4e9b3-ff32-4a2a-9465-c1b856ab84be)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/07a4e9b3-ff32-4a2a-9465-c1b856ab84be" style="width: 750px;"/>
+</p>
 
 <h2 style="color: #0077B5;">Profissionais Envolvidos</h2>
 <p>
@@ -89,6 +91,6 @@ Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, go
 <p style="color: #8B008B;">Para mais informações, entre em contato através de <a href="mailto:apammt@gmail.com" style="color: #8B008B;">apammt@gmail.com</a>.</p>
 
 <hr>
-
-<img src="https://github.com/GabrielBandeiraDev/bancodedados/raw/main/assets/logo.png" alt="APAM Logo" style="width: 200px;">
-
+<p align="center">
+    <img src="https://github.com/GabrielBandeiraDev/bancodedados/raw/main/assets/logo.png" alt="APAM Logo" style="width: 200px;">
+</p>
