@@ -28,10 +28,10 @@ To ensure that our environment is as welcoming and productive as possible, we wo
 ### How to Install
 <ol>
   <li>Clone the repository:
-    <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone https://github.com/GabrielBandeiraDev/bancodedados.git</code></pre>
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone git@github.com:Veras-D/RegistrationSystemAPAM.git</code></pre>
   </li>
   <li>Navigate to the project directory:
-    <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd bancodedados</code></pre>
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd RegistrationSystemAPAM.git</code></pre>
   </li>
   <li>Install the dependencies:
     <pre style="background-color: #f9f9f9; padding: 10px;"><code>pip install -r requirements.txt</code></pre>
