@@ -52,37 +52,31 @@ To ensure that our environment is as welcoming and productive as possible, we wo
   <img src="https://github.com/user-attachments/assets/07a4e9b3-ff32-4a2a-9465-c1b856ab84be" style="width: 750px;"/>
 </p>
 
-<h2 style="color: #0077B5;">Profissionais Envolvidos</h2>
-<p>
-    <a href="https://www.linkedin.com/in/willianrsantos/" style="color: #0077B5; text-decoration: none;">
-        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
-        Engenheiro de Dados - Willian Ribeiro dos Santos
-    </a>
-</p>
-<p>
-    <a href="https://www.linkedin.com/in/gabriel-bandeira-macedo-a2107a139?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" style="color: #0077B5; text-decoration: none;">
-        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
-        Manager e Desenvolvedor Python - Gabriel Bandeira Macedo
-    </a>
-</p>
-
- <a href="https://br.linkedin.com/in/edlane-rodrigues-067b8459/" style="color: #0077B5; text-decoration: none;">
-        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
-        Desenvolvedor Web - Edlane Rodrigues
-    </a>
-</p>
-<p>
-     <a href="https://www.linkedin.com/in/dayvisson-tenorio" style="color: #0077B5; text-decoration: none;">
-        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
-        Analista de Sistemas e Desenvolvedor Java - Dayvisson Tenorio
-    </a>
-</p>
-<p>
-     <a href="https://www.linkedin.com/in/veras-d" style="color: #0077B5; text-decoration: none;">
-        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn">
-        Desenvolvedor Python - Veras
-    </a>
-</p>
+<h2 style="color: #0077B5;">Our Team</h2>
+<div align="center">
+  <table style="margin-left: auto; margin-right: auto;">
+    <tr>
+      <th style="text-align: center;">Cargo</th>
+      <th style="text-align: center;">Nome</th>
+    </tr>
+    <tr>
+      <td>ADS, Designer e Developer</td>
+      <td><a href="https://www.linkedin.com/in/veras-d/">Veras</a></td>
+    </tr>
+    <tr>
+      <td>DBA e Developer</td>
+      <td><a href="https://www.linkedin.com/in/willianrsantos/">Willian Ribeiro</a></td>
+    </tr>
+    <tr>
+      <td>QA e Developer</td>
+      <td><a href="https://www.linkedin.com/in/dayvisson-tenorio/">Dayvisson Tenório</a></td>
+    </tr>
+    <tr>
+      <td>QA e Technical Recruiter</td>
+      <td><a href="https://www.linkedin.com/in/gabriel-bandeira-macedo-a2107a139/">Gabriel Bandeira</a></td>
+    </tr>
+  </table>
+</div> 
 <h2 style="color: #8B0000;">Contribuição</h2>
 <ol style="color: #8B0000;">
     <li>Faça um fork do projeto.</li>
