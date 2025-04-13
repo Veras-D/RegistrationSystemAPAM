@@ -1,26 +1,31 @@
-<h1 style="color: #2E8B57;">Projeto Cadastro de Pessoas </h1>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d5ca79da-a0ef-462b-93f3-8bf87e063a7b" />
+</p>
 
-<p style="color: #2E8B57;">Este projeto é sem fins lucrativos para atender as necessidades da ONG Associação Mato-Grossense Protetora dos Animais (APAM) 🐈🐕
+# APAM
+APAM is an association whose goal is to protect animals from abandonment and mistreatment. Based in Cuiabá, the NGO shelters around 60 animals that are treated and sent for responsible adoption.
 
-Para garantir que nosso ambiente seja o mais acolhedor e produtivo possível, gostaríamos de lembrar algumas boas práticas e maneiras:
+# The Project
 
-* _Respeito mútuo_: Aqui na nossa ONG, todos são tratados com respeito e consideração. 
-* _Colaboração_: Estamos todos juntos nessa missão!
-* _Comunicação clara_: Se surgir alguma dúvida ou preocupação, não hesite em comunicar-se conosco.
-* _Gratidão_: Por último, mas não menos importante, gostaríamos de expressar nossa profunda gratidão por seu tempo e dedicação .</p>
+This is a non-profit project to meet the needs of the NGO Associação Mato-Grossense Protetora dos Animais (APAM) 🐈🐕
 
-<h2 style="color: #4682B4;">Objetivo</h2>
+To ensure that our environment is as welcoming and productive as possible, we would like to remind you of some good practices and manners:
+
+* _Mutual respect_: Here at our NGO, everyone is treated with respect and consideration.
+* _Collaboration_: We are all in this together!
+* _Clear communication_: If you have any questions or concerns, please do not hesitate to contact us.
+* _Gratitude_: Last but not least, we would like to express our deep gratitude for your time and dedication.
+
+## Objectives
 
 <p style="color: #4682B4;">Criar um programa onde a ONG consiga cadastrar pessoas ou empresas que fazem doações para a instituição.</p>
 
-<h2 style="color: #FF6347;">Tecnologias Utilizadas</h2>
-<ul>
-    <li style="color: #FF6347;">Python</li>
-    <li style="color: #FF6347;">Pandas</li>
-    <li style="color: #FF6347;">SQLite</li>
-</ul>
+### Tecnologias Utilizadas
+* Python
+* Pandas
+* SQLite
 
-<h2 style="color: #6A5ACD;">Instalação</h2>
+### How to Install
 <ol>
     <li>Clone o repositório:
         <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone https://github.com/GabrielBandeiraDev/bancodedados.git</code></pre>
