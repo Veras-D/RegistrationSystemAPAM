@@ -18,7 +18,7 @@ To ensure that our environment is as welcoming and productive as possible, we wo
 
 ## Objectives
 
-<p style="color: #4682B4;">Criar um programa onde a ONG consiga cadastrar pessoas ou empresas que fazem doações para a instituição.</p>
+<p style="color: #4682B4;">Create a program where the NGO can register people or companies that make donations to the institution.</p>
 
 ### Tecnologias Utilizadas
 * Python
@@ -27,27 +27,27 @@ To ensure that our environment is as welcoming and productive as possible, we wo
 
 ### How to Install
 <ol>
-    <li>Clone o repositório:
-        <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone https://github.com/GabrielBandeiraDev/bancodedados.git</code></pre>
-    </li>
-    <li>Navegue até o diretório do projeto:
-        <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd bancodedados</code></pre>
-    </li>
-    <li>Instale as dependências:
-        <pre style="background-color: #f9f9f9; padding: 10px;"><code>pip install -r requirements.txt</code></pre>
-    </li>
-    <li>Configure o banco de dados no arquivo <code>config.py</code>.</li>
-    <li>Execute a aplicação:
-        <pre style="background-color: #f9f9f9; padding: 10px;"><code>python app.py</code></pre>
-    </li>
+  <li>Clone the repository:
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone https://github.com/GabrielBandeiraDev/bancodedados.git</code></pre>
+  </li>
+  <li>Navigate to the project directory:
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd bancodedados</code></pre>
+  </li>
+  <li>Install the dependencies:
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>Configure the database in the <code>config.py</code> file.</li>
+  <li>Run the application:
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>python app.py</code></pre>
+  </li>
 </ol>
 
-<h2 style="color: #D2691E;">Como Usar</h2>
+<h2 style="color: #D2691E;">How to Use</h2>
 <ol style="color: #D2691E;">
-    <li>Baixe o projeto pelo <a href="https://drive.google.com/drive/folders/1j-0z0R6_HqXRs9ddUQeZsDVP7neyl2n0">link</a>.</li>
-    <li>Use a interface para cadastrar, visualizar e gerenciar doadores.</li>
+  <li>Download the project from the <a href="https://drive.google.com/drive/folders/1j-0z0R6_HqXRs9ddUQeZsDVP7neyl2n0">link</a>.</li>
+  <li>Use the interface to register, view and manage donors.</li>
 </ol>
-<h3 style="color: #0077B5;">Imagem</h3>
+<h3 style="color: #0077B5;"> ProjectImage</h3>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/07a4e9b3-ff32-4a2a-9465-c1b856ab84be" style="width: 750px;"/>
 </p>
@@ -76,20 +76,15 @@ To ensure that our environment is as welcoming and productive as possible, we wo
       <td><a href="https://www.linkedin.com/in/gabriel-bandeira-macedo-a2107a139/">Gabriel Bandeira</a></td>
     </tr>
   </table>
+  
 </div> 
-<h2 style="color: #8B0000;">Contribuição</h2>
+<h2 style="color: #8B0000;">Contribution</h2>
 <ol style="color: #8B0000;">
-    <li>Faça um fork do projeto.</li>
-    <li>Crie uma branch para sua feature (<code>git checkout -b feature/nova-feature</code>).</li>
-    <li>Commit suas mudanças (<code>git commit -am 'Adicionei uma nova feature'</code>).</li>
-    <li>Push para a branch (<code>git push origin feature/nova-feature</code>).</li>
-    <li>Abra um Pull Request.</li>
+  <li>Fork the project.</li>
+  <li>Create a branch for your feature (<code>git checkout -b feature/new-feature</code>).</li>
+  <li>Commit your changes (<code>git commit -am 'I added a new feature'</code>).</li>
+  <li>Push to the branch (<code>git push origin feature/new-feature</code>).</li>
+  <li>Open a Pull Request.</li>
 </ol>
 
-<h2 style="color: #8B008B;">Contato</h2>
-<p style="color: #8B008B;">Para mais informações, entre em contato através de <a href="mailto:apammt@gmail.com" style="color: #8B008B;">apammt@gmail.com</a>.</p>
-
 <hr>
-<p align="center">
-    <img src="https://github.com/GabrielBandeiraDev/bancodedados/raw/main/assets/logo.png" alt="APAM Logo" style="width: 200px;">
-</p>
