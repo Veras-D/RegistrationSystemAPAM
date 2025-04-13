@@ -38,13 +38,13 @@ To ensure that our environment is as welcoming and productive as possible, we wo
   </li>
   <li>Configure the database in the <code>config.py</code> file.</li>
   <li>Run the application:
-    <pre style="background-color: #f9f9f9; padding: 10px;"><code>python app.py</code></pre>
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>python main.py</code></pre>
   </li>
 </ol>
 
 <h2 style="color: #D2691E;">How to Use</h2>
 <ol style="color: #D2691E;">
-  <li>Download the project from the <a href="https://drive.google.com/drive/folders/1j-0z0R6_HqXRs9ddUQeZsDVP7neyl2n0">link</a>.</li>
+  <li>Download the project from the <a href="https://github.com/Veras-D/RegistrationSystemAPAM/releases">link</a>.</li>
   <li>Use the interface to register, view and manage donors.</li>
 </ol>
 <h3 style="color: #0077B5;"> ProjectImage</h3>
