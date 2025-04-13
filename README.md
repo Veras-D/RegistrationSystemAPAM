@@ -59,19 +59,19 @@ To ensure that our environment is as welcoming and productive as possible, we wo
       <th style="text-align: center;">Nome</th>
     </tr>
     <tr>
-      <td>ADS, Designer e Developer</td>
+      <td>ADS, Designer and Developer</td>
       <td><a href="https://www.linkedin.com/in/veras-d/">Veras</a></td>
     </tr>
     <tr>
-      <td>DBA e Developer</td>
+      <td>DBA and Developer</td>
       <td><a href="https://www.linkedin.com/in/willianrsantos/">Willian Ribeiro</a></td>
     </tr>
     <tr>
-      <td>QA e Developer</td>
+      <td>QA and Developer</td>
       <td><a href="https://www.linkedin.com/in/dayvisson-tenorio/">Dayvisson Tenório</a></td>
     </tr>
     <tr>
-      <td>QA e Technical Recruiter</td>
+      <td>QA and Technical Recruiter</td>
       <td><a href="https://www.linkedin.com/in/gabriel-bandeira-macedo-a2107a139/">Gabriel Bandeira</a></td>
     </tr>
   </table>
