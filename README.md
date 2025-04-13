@@ -31,14 +31,14 @@ To ensure that our environment is as welcoming and productive as possible, we wo
     <pre style="background-color: #f9f9f9; padding: 10px;"><code>git clone git@github.com:Veras-D/RegistrationSystemAPAM.git</code></pre>
   </li>
   <li>Navigate to the project directory:
-    <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd RegistrationSystemAPAM.git</code></pre>
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>cd RegistrationSystemAPAM</code></pre>
   </li>
   <li>Install the dependencies:
     <pre style="background-color: #f9f9f9; padding: 10px;"><code>pip install -r requirements.txt</code></pre>
   </li>
   <li>Configure the database in the <code>config.py</code> file.</li>
   <li>Run the application:
-    <pre style="background-color: #f9f9f9; padding: 10px;"><code>python main.py</code></pre>
+    <pre style="background-color: #f9f9f9; padding: 10px;"><code>python tela_sistema_cadastro_apam/main.py</code></pre>
   </li>
 </ol>
 
